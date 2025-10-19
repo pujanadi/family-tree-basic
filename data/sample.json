@@ -1,0 +1,375 @@
+{
+  "people": {
+    "founder": {
+      "id": "founder",
+      "name": "Eleanor Hart",
+      "birthYear": 1945,
+      "spouseIds": ["founder-spouse"],
+      "childIds": ["child-1", "child-2", "child-3", "child-4", "child-5", "child-6"]
+    },
+    "founder-spouse": {
+      "id": "founder-spouse",
+      "name": "Samuel Hart",
+      "birthYear": 1943,
+      "deathYear": 1999,
+      "spouseIds": ["founder"],
+      "childIds": ["child-1", "child-2", "child-3", "child-4", "child-5", "child-6"]
+    },
+    "child-1": {
+      "id": "child-1",
+      "name": "Amelia Hart",
+      "birthYear": 1968,
+      "spouseIds": ["child-1-spouse"],
+      "childIds": ["grandchild-1", "grandchild-4", "grandchild-5"]
+    },
+    "child-1-spouse": {
+      "id": "child-1-spouse",
+      "name": "Noah Chen",
+      "birthYear": 1967,
+      "spouseIds": ["child-1"],
+      "childIds": ["grandchild-1", "grandchild-4", "grandchild-5"]
+    },
+    "child-2": {
+      "id": "child-2",
+      "name": "Julian Hart",
+      "birthYear": 1972,
+      "spouseIds": ["child-2-spouse"],
+      "childIds": ["grandchild-2", "grandchild-3", "grandchild-6"]
+    },
+    "child-2-spouse": {
+      "id": "child-2-spouse",
+      "name": "Mira Patel",
+      "birthYear": 1975,
+      "spouseIds": ["child-2"],
+      "childIds": ["grandchild-2", "grandchild-3", "grandchild-6"]
+    },
+    "child-3": {
+      "id": "child-3",
+      "name": "Maya Hart",
+      "birthYear": 1974,
+      "spouseIds": ["child-3-spouse"],
+      "childIds": ["grandchild-7", "grandchild-8", "grandchild-9"]
+    },
+    "child-3-spouse": {
+      "id": "child-3-spouse",
+      "name": "Ethan Ross",
+      "birthYear": 1972,
+      "spouseIds": ["child-3"],
+      "childIds": ["grandchild-7", "grandchild-8", "grandchild-9"]
+    },
+    "child-4": {
+      "id": "child-4",
+      "name": "Nolan Hart",
+      "birthYear": 1978,
+      "spouseIds": ["child-4-spouse"],
+      "childIds": ["grandchild-10", "grandchild-11"]
+    },
+    "child-4-spouse": {
+      "id": "child-4-spouse",
+      "name": "Priya Desai",
+      "birthYear": 1981,
+      "spouseIds": ["child-4"],
+      "childIds": ["grandchild-10", "grandchild-11"]
+    },
+    "child-5": {
+      "id": "child-5",
+      "name": "Serena Hart",
+      "birthYear": 1981,
+      "spouseIds": ["child-5-spouse"],
+      "childIds": ["grandchild-12", "grandchild-13", "grandchild-14"]
+    },
+    "child-5-spouse": {
+      "id": "child-5-spouse",
+      "name": "Liam Brooks",
+      "birthYear": 1980,
+      "spouseIds": ["child-5"],
+      "childIds": ["grandchild-12", "grandchild-13", "grandchild-14"]
+    },
+    "child-6": {
+      "id": "child-6",
+      "name": "Tessa Hart",
+      "birthYear": 1984,
+      "spouseIds": ["child-6-spouse"],
+      "childIds": ["grandchild-15", "grandchild-16"]
+    },
+    "child-6-spouse": {
+      "id": "child-6-spouse",
+      "name": "Jordan Miles",
+      "birthYear": 1983,
+      "spouseIds": ["child-6"],
+      "childIds": ["grandchild-15", "grandchild-16"]
+    },
+    "grandchild-1": {
+      "id": "grandchild-1",
+      "name": "Luca Chen",
+      "birthYear": 1995,
+      "spouseIds": ["grandchild-1-spouse"],
+      "childIds": ["greatgrandchild-1", "greatgrandchild-2"]
+    },
+    "grandchild-1-spouse": {
+      "id": "grandchild-1-spouse",
+      "name": "Avery Singh",
+      "birthYear": 1996,
+      "spouseIds": ["grandchild-1"],
+      "childIds": ["greatgrandchild-1", "greatgrandchild-2"]
+    },
+    "greatgrandchild-1": {
+      "id": "greatgrandchild-1",
+      "name": "Mila Chen-Singh",
+      "birthYear": 2022
+    },
+    "greatgrandchild-2": {
+      "id": "greatgrandchild-2",
+      "name": "Ezra Chen-Singh",
+      "birthYear": 2024
+    },
+    "grandchild-2": {
+      "id": "grandchild-2",
+      "name": "Isla Hart",
+      "birthYear": 2001,
+      "spouseIds": ["grandchild-2-spouse"],
+      "childIds": ["greatgrandchild-3", "greatgrandchild-4"]
+    },
+    "grandchild-2-spouse": {
+      "id": "grandchild-2-spouse",
+      "name": "Rowan Blake",
+      "birthYear": 2000,
+      "spouseIds": ["grandchild-2"],
+      "childIds": ["greatgrandchild-3", "greatgrandchild-4"]
+    },
+    "greatgrandchild-3": {
+      "id": "greatgrandchild-3",
+      "name": "Kai Hart-Blake",
+      "birthYear": 2021
+    },
+    "greatgrandchild-4": {
+      "id": "greatgrandchild-4",
+      "name": "Elena Hart-Blake",
+      "birthYear": 2023
+    },
+    "grandchild-3": {
+      "id": "grandchild-3",
+      "name": "Mason Hart",
+      "birthYear": 2004,
+      "spouseIds": ["grandchild-3-spouse"]
+    },
+    "grandchild-3-spouse": {
+      "id": "grandchild-3-spouse",
+      "name": "Zoe Kim",
+      "birthYear": 2003,
+      "spouseIds": ["grandchild-3"]
+    },
+    "grandchild-4": {
+      "id": "grandchild-4",
+      "name": "Sienna Chen",
+      "birthYear": 1998,
+      "spouseIds": ["grandchild-4-spouse"],
+      "childIds": ["greatgrandchild-5", "greatgrandchild-6"]
+    },
+    "grandchild-4-spouse": {
+      "id": "grandchild-4-spouse",
+      "name": "Leila Morgan",
+      "birthYear": 1996,
+      "spouseIds": ["grandchild-4"],
+      "childIds": ["greatgrandchild-5", "greatgrandchild-6"]
+    },
+    "greatgrandchild-5": {
+      "id": "greatgrandchild-5",
+      "name": "Orion Chen-Morgan",
+      "birthYear": 2025
+    },
+    "greatgrandchild-6": {
+      "id": "greatgrandchild-6",
+      "name": "Juniper Chen-Morgan",
+      "birthYear": 2027
+    },
+    "grandchild-5": {
+      "id": "grandchild-5",
+      "name": "Oliver Chen",
+      "birthYear": 2000,
+      "spouseIds": ["grandchild-5-spouse"],
+      "childIds": ["greatgrandchild-7", "greatgrandchild-8"]
+    },
+    "grandchild-5-spouse": {
+      "id": "grandchild-5-spouse",
+      "name": "Mateo Alvarez",
+      "birthYear": 1999,
+      "spouseIds": ["grandchild-5"],
+      "childIds": ["greatgrandchild-7", "greatgrandchild-8"]
+    },
+    "greatgrandchild-7": {
+      "id": "greatgrandchild-7",
+      "name": "Aria Chen-Alvarez",
+      "birthYear": 2026
+    },
+    "greatgrandchild-8": {
+      "id": "greatgrandchild-8",
+      "name": "Leo Chen-Alvarez",
+      "birthYear": 2028
+    },
+    "grandchild-6": {
+      "id": "grandchild-6",
+      "name": "Aria Hart",
+      "birthYear": 2003,
+      "spouseIds": ["grandchild-6-spouse"]
+    },
+    "grandchild-6-spouse": {
+      "id": "grandchild-6-spouse",
+      "name": "Sophie Laurent",
+      "birthYear": 2003,
+      "spouseIds": ["grandchild-6"]
+    },
+    "grandchild-7": {
+      "id": "grandchild-7",
+      "name": "Harper Ross",
+      "birthYear": 1999,
+      "spouseIds": ["grandchild-7-spouse"],
+      "childIds": ["greatgrandchild-9", "greatgrandchild-10"]
+    },
+    "grandchild-7-spouse": {
+      "id": "grandchild-7-spouse",
+      "name": "Miles Porter",
+      "birthYear": 1998,
+      "spouseIds": ["grandchild-7"],
+      "childIds": ["greatgrandchild-9", "greatgrandchild-10"]
+    },
+    "greatgrandchild-9": {
+      "id": "greatgrandchild-9",
+      "name": "Isabel Ross-Porter",
+      "birthYear": 2024
+    },
+    "greatgrandchild-10": {
+      "id": "greatgrandchild-10",
+      "name": "Noah Ross-Porter",
+      "birthYear": 2027
+    },
+    "grandchild-8": {
+      "id": "grandchild-8",
+      "name": "Felix Ross",
+      "birthYear": 2002,
+      "spouseIds": ["grandchild-8-spouse"]
+    },
+    "grandchild-8-spouse": {
+      "id": "grandchild-8-spouse",
+      "name": "Emilia Novak",
+      "birthYear": 2001,
+      "spouseIds": ["grandchild-8"]
+    },
+    "grandchild-9": {
+      "id": "grandchild-9",
+      "name": "Lila Ross",
+      "birthYear": 2005,
+      "spouseIds": ["grandchild-9-spouse"]
+    },
+    "grandchild-9-spouse": {
+      "id": "grandchild-9-spouse",
+      "name": "Cameron Wells",
+      "birthYear": 2004,
+      "spouseIds": ["grandchild-9"]
+    },
+    "grandchild-10": {
+      "id": "grandchild-10",
+      "name": "Jasmine Hart-Desai",
+      "birthYear": 2006,
+      "spouseIds": ["grandchild-10-spouse"],
+      "childIds": ["greatgrandchild-11", "greatgrandchild-12"]
+    },
+    "grandchild-10-spouse": {
+      "id": "grandchild-10-spouse",
+      "name": "Theo Bennett",
+      "birthYear": 2005,
+      "spouseIds": ["grandchild-10"],
+      "childIds": ["greatgrandchild-11", "greatgrandchild-12"]
+    },
+    "greatgrandchild-11": {
+      "id": "greatgrandchild-11",
+      "name": "Evelyn Bennett-Hart",
+      "birthYear": 2029
+    },
+    "greatgrandchild-12": {
+      "id": "greatgrandchild-12",
+      "name": "Archer Bennett-Hart",
+      "birthYear": 2031
+    },
+    "grandchild-11": {
+      "id": "grandchild-11",
+      "name": "Rowan Hart-Desai",
+      "birthYear": 2008,
+      "spouseIds": ["grandchild-11-spouse"]
+    },
+    "grandchild-11-spouse": {
+      "id": "grandchild-11-spouse",
+      "name": "Skylar Reed",
+      "birthYear": 2008,
+      "spouseIds": ["grandchild-11"]
+    },
+    "grandchild-12": {
+      "id": "grandchild-12",
+      "name": "Piper Brooks",
+      "birthYear": 2003,
+      "spouseIds": ["grandchild-12-spouse"],
+      "childIds": ["greatgrandchild-13"]
+    },
+    "grandchild-12-spouse": {
+      "id": "grandchild-12-spouse",
+      "name": "Adrian Wells",
+      "birthYear": 2002,
+      "spouseIds": ["grandchild-12"],
+      "childIds": ["greatgrandchild-13"]
+    },
+    "greatgrandchild-13": {
+      "id": "greatgrandchild-13",
+      "name": "Sage Brooks-Wells",
+      "birthYear": 2025
+    },
+    "grandchild-13": {
+      "id": "grandchild-13",
+      "name": "Quinn Brooks",
+      "birthYear": 2005,
+      "spouseIds": ["grandchild-13-spouse"]
+    },
+    "grandchild-13-spouse": {
+      "id": "grandchild-13-spouse",
+      "name": "Jordan Ellis",
+      "birthYear": 2004,
+      "spouseIds": ["grandchild-13"]
+    },
+    "grandchild-14": {
+      "id": "grandchild-14",
+      "name": "Reese Brooks",
+      "birthYear": 2008,
+      "spouseIds": ["grandchild-14-spouse"]
+    },
+    "grandchild-14-spouse": {
+      "id": "grandchild-14-spouse",
+      "name": "Sydney Patel",
+      "birthYear": 2007,
+      "spouseIds": ["grandchild-14"]
+    },
+    "grandchild-15": {
+      "id": "grandchild-15",
+      "name": "Avery Miles",
+      "birthYear": 2010,
+      "spouseIds": ["grandchild-15-spouse"]
+    },
+    "grandchild-15-spouse": {
+      "id": "grandchild-15-spouse",
+      "name": "Harper Sloan",
+      "birthYear": 2011,
+      "spouseIds": ["grandchild-15"]
+    },
+    "grandchild-16": {
+      "id": "grandchild-16",
+      "name": "Elliot Miles",
+      "birthYear": 2013,
+      "spouseIds": ["grandchild-16-spouse"]
+    },
+    "grandchild-16-spouse": {
+      "id": "grandchild-16-spouse",
+      "name": "Blair Sutton",
+      "birthYear": 2014,
+      "spouseIds": ["grandchild-16"]
+    }
+  },
+  "rootIds": ["founder"]
+}
