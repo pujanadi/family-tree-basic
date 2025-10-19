@@ -49,6 +49,7 @@ const TreeCanvas = forwardRef<TreeCanvasHandle, TreeCanvasProps>(
     const [size, setSize] = useState<Size>(INITIAL_SIZE);
     const [translate, setTranslate] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
     const [isReady, setIsReady] = useState(false);
+    const [zoom, setZoom] = useState(0.8);
     const nodeRefs = useRef(new Map<string, HTMLDivElement>());
     const highlightTimeouts = useRef(new Map<string, number>());
     const pendingFocusId = useRef<string | null>(null);
@@ -148,17 +149,19 @@ const TreeCanvas = forwardRef<TreeCanvasHandle, TreeCanvasProps>(
     );
 
     const handleTreeUpdate = useCallback(
-      (payload: { translate?: { x: number; y: number } }) => {
-        if (!payload?.translate) {
-          return;
+      (payload: { translate?: { x: number; y: number }; zoom?: number }) => {
+        if (payload?.translate) {
+          setTranslate((prev) => {
+            const next = payload.translate!;
+            if (Math.abs(prev.x - next.x) < 0.5 && Math.abs(prev.y - next.y) < 0.5) {
+              return prev;
+            }
+            return next;
+          });
         }
-        setTranslate((prev) => {
-          const next = payload.translate!;
-          if (Math.abs(prev.x - next.x) < 0.5 && Math.abs(prev.y - next.y) < 0.5) {
-            return prev;
-          }
-          return next;
-        });
+        if (typeof payload?.zoom === "number") {
+          setZoom((prev) => (Math.abs(prev - payload.zoom!) < 0.0001 ? prev : payload.zoom!));
+        }
       },
       []
     );
@@ -331,6 +334,7 @@ const TreeCanvas = forwardRef<TreeCanvasHandle, TreeCanvasProps>(
           <Tree
             data={data}
             translate={translate}
+            zoom={zoom}
             zoomable
             enableLegacyTransitions={false}
             transitionDuration={300}
@@ -339,9 +343,9 @@ const TreeCanvas = forwardRef<TreeCanvasHandle, TreeCanvasProps>(
             orientation="vertical"
             renderCustomNodeElement={renderNode}
             collapsible={false}
-            zoom={0.8}
             pathFunc="step"
             pathClassFunc={() => "family-edge"}
+            scaleExtent={{ min: 0.4, max: 2 }}
             onUpdate={handleTreeUpdate}
           />
         )}
