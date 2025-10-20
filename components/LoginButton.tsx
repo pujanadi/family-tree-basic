@@ -182,7 +182,7 @@ export default function LoginButton() {
         <p className="mt-3 text-xs text-slate-400 dark:text-slate-500">
           Looking for elevated controls?{" "}
           <a
-            href="/backoffice/login"
+            href="/admin/login"
             className="font-semibold text-misty-teal-600 underline-offset-2 hover:underline dark:text-misty-teal-300"
           >
             Sign in as admin
