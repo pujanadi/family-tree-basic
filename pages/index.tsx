@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Head from "next/head";
 import TreeCanvas, { type TreeCanvasHandle } from "@/components/TreeCanvas";
 import Toolbar from "@/components/Toolbar";
+import LoginButton from "@/components/LoginButton";
 import type { FamilyTree } from "@/lib/types";
 import sampleTree from "@/data/sample.json";
 import { flattenPeople, searchPeople } from "@/lib/tree-utils";
@@ -87,6 +88,11 @@ const HomePage = () => {
         <meta name="description" content="Interactive family tree explorer with export and theme controls." />
       </Head>
       <div className="min-h-screen bg-gradient-to-br from-soft-sand-100 via-white to-misty-teal-50 pb-16 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800">
+        <div className="pointer-events-none fixed inset-x-0 top-4 z-40 flex justify-end px-6">
+          <div className="pointer-events-auto">
+            <LoginButton />
+          </div>
+        </div>
         <main className="mx-auto flex max-w-7xl flex-col gap-8 px-6 pt-10">
           <div className="flex flex-col gap-3">
             <p className="text-sm font-medium uppercase tracking-[0.3em] text-misty-teal-500 dark:text-misty-teal-300">

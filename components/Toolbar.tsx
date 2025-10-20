@@ -2,7 +2,6 @@ import type { Person } from "@/lib/types";
 import SearchBar from "./SearchBar";
 import ThemeToggle from "./ThemeToggle";
 import ExportButton from "./ExportButton";
-import LoginButton from "./LoginButton";
 
 interface ToolbarProps {
   query: string;
@@ -40,7 +39,6 @@ const Toolbar = ({
     <div className="flex items-center gap-3">
       <ThemeToggle />
       <ExportButton onExport={onExport} />
-      <LoginButton />
     </div>
   </header>
 );

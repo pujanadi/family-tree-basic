@@ -1,6 +1,7 @@
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
 import { useEffect } from "react";
+import { AuthProvider } from "@/lib/auth-context";
 import "@/styles/globals.css";
 
 const APP_THEMES = ["light", "dark", "sepia"];
@@ -17,7 +18,9 @@ export default function App({ Component, pageProps }: AppProps) {
       defaultTheme="light"
       themes={APP_THEMES}
     >
-      <Component {...pageProps} />
+      <AuthProvider>
+        <Component {...pageProps} />
+      </AuthProvider>
     </ThemeProvider>
   );
 }

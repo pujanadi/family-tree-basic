@@ -32,3 +32,17 @@ Use the **Export PNG** button in the toolbar. The file automatically downloads w
 
 ## Customising data
 Update `data/sample.json` or replace the fetch in `pages/index.tsx` with an API call or dynamic data source that matches the `FamilyTree` interface found in `lib/types.ts`.
+
+## Authentication (NextAuth)
+This project includes a NextAuth route and a `/login` page for OAuth demos. To enable providers in development:
+
+1. Copy `.env.example` to `.env.local` and fill in provider credentials (GitHub, Google) and `NEXTAUTH_SECRET`.
+2. Install NextAuth and provider packages:
+
+```bash
+npm install next-auth
+```
+
+3. Start the dev server and visit `/login` to sign in. If `DEMO_MODE=true` in your environment, the login page exposes a "Continue as demo" button for local testing.
+
+Note: actual OAuth providers require valid callback URLs configured in your provider app settings (e.g., GitHub OAuth app callback to `http://localhost:3000/api/auth/callback/github`).
