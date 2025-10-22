@@ -33,16 +33,13 @@ Use the **Export PNG** button in the toolbar. The file automatically downloads w
 ## Customising data
 Update `data/sample.json` or replace the fetch in `pages/index.tsx` with an API call or dynamic data source that matches the `FamilyTree` interface found in `lib/types.ts`.
 
-## Authentication (NextAuth)
-This project includes a NextAuth route and a `/login` page for OAuth demos. To enable providers in development:
+## Authentication (Auth.js Core)
+This project now uses the Auth.js core runtime instead of the legacy `next-auth` package. The `/api/auth/[...nextauth]` route proxies requests to `@auth/core`, and the `/login` page consumes the generated provider list.
 
-1. Copy `.env.example` to `.env.local` and fill in provider credentials (GitHub, Google) and `NEXTAUTH_SECRET`.
-2. Install NextAuth and provider packages:
+To enable OAuth providers locally:
 
-```bash
-npm install next-auth
-```
+1. Copy `.env.example` to `.env.local` and fill in provider credentials (GitHub, Google) plus `NEXTAUTH_SECRET`.
+2. Install any provider-specific peer dependencies that Auth.js requires (for example, GitHub and Google providers are bundled).
+3. Start the dev server and visit `/login` to initiate sign-in. When `NEXT_PUBLIC_DEMO_MODE=true`, the page also exposes a "Continue as demo" button for local testing without OAuth.
 
-3. Start the dev server and visit `/login` to sign in. If `DEMO_MODE=true` in your environment, the login page exposes a "Continue as demo" button for local testing.
-
-Note: actual OAuth providers require valid callback URLs configured in your provider app settings (e.g., GitHub OAuth app callback to `http://localhost:3000/api/auth/callback/github`).
+Remember to configure redirect URLs in your OAuth provider dashboard (e.g., GitHub callback → `http://localhost:3000/api/auth/callback/github`).

@@ -48,14 +48,19 @@ function buildNode(
   const hasChildren = childNodes.length > 0;
   const isCollapsed = collapsedIds.has(personId);
 
+  const attributes: Record<string, string | number | boolean> = {};
+  if (person.birthYear) {
+    attributes.birth = `${person.birthYear}`;
+  }
+  if (person.deathYear) {
+    attributes.death = `${person.deathYear}`;
+  }
+
   const node: FamilyNodeDatum = {
     id: person.id,
     name: person.name,
-    attributes: {
-      birth: person.birthYear ? `${person.birthYear}` : undefined,
-      death: person.deathYear ? `${person.deathYear}` : undefined
-    },
-    children: !isCollapsed && hasChildren ? childNodes : undefined,
+    ...(Object.keys(attributes).length > 0 ? { attributes } : {}),
+    ...(!isCollapsed && hasChildren ? { children: childNodes } : {}),
     person,
     spouses,
     hasChildren,

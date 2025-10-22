@@ -4,7 +4,7 @@ import BackofficeLayout from "@/components/backoffice/BackofficeLayout";
 const TreesPage = () => (
   <>
     <Head>
-      <title>Backoffice · Family Trees</title>
+      <title>Backoffice - Family Trees</title>
     </Head>
     <BackofficeLayout
       title="Family trees"

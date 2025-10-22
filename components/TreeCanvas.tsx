@@ -9,6 +9,7 @@ import {
 } from "react";
 import dynamic from "next/dynamic";
 import { toPng } from "html-to-image";
+import type { CustomNodeElementProps } from "react-d3-tree";
 import type { FamilyTree } from "@/lib/types";
 import { buildFamilyTreeData, findAncestors } from "@/lib/tree-utils";
 import type { FamilyNodeDatum } from "@/lib/tree-utils";
@@ -279,25 +280,27 @@ const TreeCanvas = forwardRef<TreeCanvasHandle, TreeCanvasProps>(
     );
 
     const renderNode = useCallback(
-      ({ nodeDatum }: { nodeDatum: FamilyNodeDatum }) => {
-        const isSelected = selectedId === nodeDatum.person.id;
-        const isHighlighted = highlightedId === nodeDatum.person.id;
-        const isCollapsed = collapsedIds.has(nodeDatum.person.id);
+      ({ nodeDatum }: CustomNodeElementProps) => {
+        const familyNode = nodeDatum as unknown as FamilyNodeDatum;
+        const personId = familyNode.person.id;
+        const isSelected = selectedId === personId;
+        const isHighlighted = highlightedId === personId;
+        const isCollapsed = collapsedIds.has(personId);
 
         return (
           <foreignObject width={NODE_WIDTH} height={NODE_HEIGHT} x={-NODE_WIDTH / 2} y={-NODE_HEIGHT / 2}>
             <PersonNode
               ref={(element) => {
                 if (element) {
-                  nodeRefs.current.set(nodeDatum.person.id, element);
-                  if (pendingFocusId.current === nodeDatum.person.id) {
-                    window.requestAnimationFrame(() => attemptFocus(nodeDatum.person.id));
+                  nodeRefs.current.set(personId, element);
+                  if (pendingFocusId.current === personId) {
+                    window.requestAnimationFrame(() => attemptFocus(personId));
                   }
                 } else {
-                  nodeRefs.current.delete(nodeDatum.person.id);
+                  nodeRefs.current.delete(personId);
                 }
               }}
-              node={nodeDatum}
+              node={familyNode}
               isSelected={!!isSelected}
               isHighlighted={!!isHighlighted}
               isCollapsed={isCollapsed}
@@ -357,3 +360,4 @@ const TreeCanvas = forwardRef<TreeCanvasHandle, TreeCanvasProps>(
 TreeCanvas.displayName = "TreeCanvas";
 
 export default TreeCanvas;
+
