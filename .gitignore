@@ -81,3 +81,4 @@ history/
 package-lock.json
 pnpm-lock.yaml
 yarn.lock
+node_modules_backup_1/@next/swc-win32-x64-msvc/next-swc.win32-x64-msvc.node

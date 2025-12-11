@@ -3,6 +3,7 @@ export interface Person {
   name: string;
   birthYear?: number | null;
   deathYear?: number | null;
+  parentId?: string | null;
   spouseIds?: string[];
   childIds?: string[];
 }
@@ -14,5 +15,4 @@ export interface FamilyTree {
 
 export interface PositionedNode extends Person {
   depth: number;
-  parentId?: string;
 }
